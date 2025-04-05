@@ -1,0 +1,252 @@
+// 🎨 Define Variables
+$primary-color: #007bff;
+$background-color: #f4f4f4;
+$text-color: #333;
+
+// Import SASS Color Functions
+@use "sass:color";
+
+// ✨ Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+// 🌍 Navbar Styles
+.navbar {
+  background: $primary-color;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      // 🎨 Style Logout Button
+      button {
+        background:  #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+  
+        &:hover {
+          background: white;
+          color:  #007bff;
+        }
+  
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}
+
+// 🚀 Authentication Pages (Login & Register)
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $background-color;
+}
+
+.auth-box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+
+  h2 {
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    button {
+      padding: 12px;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: color.scale($primary-color, $lightness: -10%);
+      }
+    }
+  }
+
+  p {
+    margin-top: 15px;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ❌ Hide Navbar on Auth Pages
+.auth-hidden-navbar {
+  display: none;
+}
+
+// 📌 Home Page
+.task-manager {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+  h1 {
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  // 🎯 No Task Message
+  .no-task {
+    text-align: center;
+    font-size: 18px;
+    color: $text-color;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  // ✨ Task Form Styling
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    button {
+      padding: 12px;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: color.scale($primary-color, $lightness: -10%);
+      }
+    }
+  }
+
+  // 📝 Task List Styling
+  .task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+
+    .task-item {
+      background: $background-color;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .delete-btn {
+        background: red;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background: darkred;
+        }
+      }
+    }
+  }
+}
+
+// 🔽 Sorting Section
+.sort-tasks {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  button {
+    padding: 10px 15px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: color.scale($primary-color, $lightness: -10%);
+    }
+  }
+}
